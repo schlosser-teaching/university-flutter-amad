@@ -17,14 +17,16 @@ class TextChangerState extends State<TextChanger> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(_buttonPressed ? 'Button gedrückt!' : widget.text),
-          TextButton(
-            onPressed: () => setState(() => _buttonPressed = true),
-            child: Text('Drück mich :)'),
-          ),
-        ]));
+    return Scaffold(
+      body: Center(child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(_buttonPressed ? 'Button gedrückt!' : widget.text),
+            TextButton(
+              onPressed: () => setState(() => _buttonPressed = true),
+              child: Text('Drück mich :)'),
+            ),
+          ])),
+    );
   }
 }

@@ -16,9 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Advanced Mobile App Development',
       theme: ThemeData(),
-      home: Scaffold(
-        body: TextChanger(text: 'Noch nicht gedrückt...'),
-      ),
+      home: TextChanger(text: 'Noch nicht gedrückt...'),
     );
   }
 }

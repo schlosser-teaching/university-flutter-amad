@@ -7,6 +7,7 @@ class CenteredText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text(displayText));
+    return Scaffold(
+        body: Center(child: Text(displayText)));
   }
 }
