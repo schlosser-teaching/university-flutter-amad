@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class LayoutExample extends StatelessWidget {
 
@@ -10,7 +11,11 @@ class LayoutExample extends StatelessWidget {
         child: Column(
           children: [
             Text('Oben'),
-            Text('Unten'),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 30.0)
+                  .add(EdgeInsets.only(right: 100.0)),
+              child: Text('Unten'),
+            ),
           ],
           mainAxisAlignment: MainAxisAlignment.center,
         ),
