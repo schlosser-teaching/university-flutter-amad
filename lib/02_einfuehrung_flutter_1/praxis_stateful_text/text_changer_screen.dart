@@ -1,18 +1,17 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class TextChanger extends StatefulWidget {
+class TextChangerScreen extends StatefulWidget {
   final String text;
 
-  TextChanger({required this.text});
+  TextChangerScreen({required this.text});
 
   @override
   State<StatefulWidget> createState() {
-    return TextChangerState();
+    return _TextChangerScreenState();
   }
 }
 
-class TextChangerState extends State<TextChanger> {
+class _TextChangerScreenState extends State<TextChangerScreen> {
   bool _buttonPressed = false;
 
   @override

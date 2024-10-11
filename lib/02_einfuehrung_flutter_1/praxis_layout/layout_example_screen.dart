@@ -2,10 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class LayoutExample extends StatelessWidget {
+class LayoutExampleScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => LayoutExampleScreen()
+    ));
     return Scaffold(
       body: Center(
         child: Column(
