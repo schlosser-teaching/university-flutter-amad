@@ -1,7 +1,8 @@
-import 'package:advanced_mobile_app_development/02_einfuehrung_flutter_1/uebung_profil/profile_section.dart';
 import 'package:flutter/material.dart';
 
-class ProfilePage extends StatelessWidget {
+import 'profile_section.dart';
+
+class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {

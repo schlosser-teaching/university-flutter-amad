@@ -1,13 +1,14 @@
-import 'package:advanced_mobile_app_development/02_einfuehrung_flutter_1/uebung_profil/bonus/bonus_profile_section.dart';
 import 'package:flutter/material.dart';
 
-class BonusProfilePage extends StatefulWidget {
+import 'bonus_profile_section.dart';
+
+class BonusProfileScreen extends StatefulWidget {
 
   @override
-  State<BonusProfilePage> createState() => _BonusProfilePageState();
+  State<BonusProfileScreen> createState() => _BonusProfileScreenState();
 }
 
-class _BonusProfilePageState extends State<BonusProfilePage> {
+class _BonusProfileScreenState extends State<BonusProfileScreen> {
   bool _isDarkMode = false;
 
   @override
