@@ -11,6 +11,8 @@ class Cat extends Animal {
 
   Cat(int legAmount, this.whiskerAmount) : super(legAmount);
 
+  Cat.withNormalLegs(this.whiskerAmount) : super(4);
+
   @override
   void talk() {
     print('Miau! Ich habe ${legAmount} Beine und ${whiskerAmount} Schnurrhaare.');

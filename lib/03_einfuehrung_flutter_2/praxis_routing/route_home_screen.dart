@@ -1,4 +1,4 @@
-import 'package:advanced_mobile_app_development/02_einfuehrung_flutter_1/praxis_centered_text/centered_text_screen.dart';
+import 'package:advanced_mobile_app_development/03_einfuehrung_flutter_2/praxis_routing/route_detail_screen.dart';
 import 'package:flutter/material.dart';
 
 class RouteHomeScreen extends StatelessWidget {
@@ -16,7 +16,7 @@ class RouteHomeScreen extends StatelessWidget {
 
   void navigateToText(String text, BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => CenteredTextScreen(displayText: text)
+        builder: (context) => RouteDetailScreen(text: text)
     ));
   }
 }
