@@ -12,6 +12,7 @@ class ProfileScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
             children: [
+              SizedBox(height: 20),
               Center(child: Image.asset('assets/profile_male.png', width: 100.0)),
               SizedBox(height: 10),
               Text('Schloool', style: Theme.of(context).textTheme.titleLarge),

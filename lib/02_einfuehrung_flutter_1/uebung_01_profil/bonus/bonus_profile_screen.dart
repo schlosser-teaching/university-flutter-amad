@@ -21,6 +21,7 @@ class _BonusProfileScreenState extends State<BonusProfileScreen> {
         child: SingleChildScrollView(
           child: Column(
               children: [
+                SizedBox(height: 20),
                 Center(child: Image.asset('assets/profile_male.png', width: 100.0)),
                 SizedBox(height: 10),
                 Text('Schloool', style: Theme.of(context).textTheme.titleLarge),
