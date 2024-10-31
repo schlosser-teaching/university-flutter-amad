@@ -9,7 +9,7 @@ abstract class Animal {
 class Cat extends Animal {
   final int whiskerAmount;
 
-  Cat(int legAmount, this.whiskerAmount) : super(legAmount);
+  Cat(super.legAmount, this.whiskerAmount);
 
   Cat.withNormalLegs(this.whiskerAmount) : super(4);
 

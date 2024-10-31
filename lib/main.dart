@@ -10,7 +10,9 @@ import 'package:advanced_mobile_app_development/03_einfuehrung_flutter_2/praxis_
 import 'package:advanced_mobile_app_development/03_einfuehrung_flutter_2/praxis_routing/route_home_screen.dart';
 import 'package:advanced_mobile_app_development/03_einfuehrung_flutter_2/theorie_theming/theming_test_screen.dart';
 import 'package:advanced_mobile_app_development/03_einfuehrung_flutter_2/theorie_visual_widgets/visual_widgets_screen.dart';
-import 'package:advanced_mobile_app_development/03_einfuehrung_flutter_2/uebung_03_gallerie/organ_gallery_overview_screen.dart';
+import 'package:advanced_mobile_app_development/03_einfuehrung_flutter_2/uebung_03_profil_2/bonus/bonus_extended_profile_list_screen.dart';
+import 'package:advanced_mobile_app_development/03_einfuehrung_flutter_2/uebung_03_profil_2/extended_profile_list_screen.dart';
+import 'package:advanced_mobile_app_development/03_einfuehrung_flutter_2/uebung_04_gallerie/organ_gallery_overview_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -49,7 +51,9 @@ class MyApp extends StatelessWidget {
     seminarGroup: 'MI23-w2-B',
     credits: 30,
   ));
-  final organGalleryOverviewScreen = OrganGalleryOverviewScreen();
+  final extendedProfileListScreen = const ExtendedProfileListScreen();
+  final bonusExtendedProfileListScreen = const BonusExtendedProfileListScreen();
+  final organGalleryOverviewScreen = const OrganGalleryOverviewScreen();
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +63,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         appBarTheme: const AppBarTheme(backgroundColor: Colors.blue),
       ),
-      home: organGalleryOverviewScreen,
+      home: bonusExtendedProfileListScreen,
     );
   }
 }

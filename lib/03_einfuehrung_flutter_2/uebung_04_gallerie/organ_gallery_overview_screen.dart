@@ -1,7 +1,7 @@
-import 'package:advanced_mobile_app_development/03_einfuehrung_flutter_2/uebung_03_gallerie/organ_gallery_detail_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'organ.dart';
+import 'organ_gallery_detail_screen.dart';
 
 class OrganGalleryOverviewScreen extends StatelessWidget {
   static const List<Organ> organs = [
