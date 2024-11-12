@@ -14,6 +14,15 @@ import 'package:advanced_mobile_app_development/03_einfuehrung_flutter_2/uebung_
 import 'package:advanced_mobile_app_development/03_einfuehrung_flutter_2/uebung_03_profil_2/extended_profile_list_screen.dart';
 import 'package:advanced_mobile_app_development/03_einfuehrung_flutter_2/uebung_04_gallerie/bonus/bonus_organ_gallery_overview_screen.dart';
 import 'package:advanced_mobile_app_development/03_einfuehrung_flutter_2/uebung_04_gallerie/organ_gallery_overview_screen.dart';
+import 'package:advanced_mobile_app_development/04_interaction_async/praxis_callback/callback_test_screen.dart';
+import 'package:advanced_mobile_app_development/04_interaction_async/praxis_webrequest/random_fact_screen.dart';
+import 'package:advanced_mobile_app_development/04_interaction_async/theorie_async/future_screen.dart';
+import 'package:advanced_mobile_app_development/04_interaction_async/theorie_declarative/text_mapping_screen.dart';
+import 'package:advanced_mobile_app_development/04_interaction_async/theorie_input/checkbox_screen.dart';
+import 'package:advanced_mobile_app_development/04_interaction_async/praxis_form/form_screen.dart';
+import 'package:advanced_mobile_app_development/04_interaction_async/theorie_input/dropdown_screen.dart';
+import 'package:advanced_mobile_app_development/04_interaction_async/theorie_input/radio_button_screen.dart';
+import 'package:advanced_mobile_app_development/04_interaction_async/theorie_input/text_field_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -57,6 +66,17 @@ class MyApp extends StatelessWidget {
   final organGalleryOverviewScreen = const OrganGalleryOverviewScreen();
   final bonusOrganGalleryOverviewScreen = BonusOrganGalleryOverviewScreen();
 
+  // 04 - Interaktion und asynchrone Programmierung
+  final textFieldScreen = const TextFieldScreen();
+  final checkboxScreen = const CheckboxScreen(defaultValue: true);
+  final radioButtonScreen = const RadioButtonScreen();
+  final dropdownScreen = const DropdownScreen();
+  final textMappingScreen = const TextMappingScreen();
+  final futureScreen = const FutureScreen();
+  final formScreen = const FormScreen();
+  final callbackTestScreen = const CallbackTestScreen();
+  final randomFactScreen = const RandomFactScreen();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -65,7 +85,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         appBarTheme: const AppBarTheme(backgroundColor: Colors.blue),
       ),
-      home: bonusOrganGalleryOverviewScreen,
+      home: formScreen,
     );
   }
 }
