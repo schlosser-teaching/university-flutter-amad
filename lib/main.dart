@@ -23,6 +23,8 @@ import 'package:advanced_mobile_app_development/04_interaction_async/praxis_form
 import 'package:advanced_mobile_app_development/04_interaction_async/theorie_input/dropdown_screen.dart';
 import 'package:advanced_mobile_app_development/04_interaction_async/theorie_input/radio_button_screen.dart';
 import 'package:advanced_mobile_app_development/04_interaction_async/theorie_input/text_field_screen.dart';
+import 'package:advanced_mobile_app_development/04_interaction_async/uebung_05_tolldo/todo_list_screen.dart';
+import 'package:advanced_mobile_app_development/04_interaction_async/uebung_06_shows/show_search_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -76,6 +78,8 @@ class MyApp extends StatelessWidget {
   final formScreen = const FormScreen();
   final callbackTestScreen = const CallbackTestScreen();
   final randomFactScreen = const RandomFactScreen();
+  final todoListScreen = const TodoListScreen();
+  final showSearchScreen = const ShowSearchScreen();
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +89,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         appBarTheme: const AppBarTheme(backgroundColor: Colors.blue),
       ),
-      home: formScreen,
+      home: showSearchScreen,
     );
   }
 }
