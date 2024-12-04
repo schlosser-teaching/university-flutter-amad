@@ -15,16 +15,19 @@ import 'package:advanced_mobile_app_development/03_einfuehrung_flutter_2/uebung_
 import 'package:advanced_mobile_app_development/03_einfuehrung_flutter_2/uebung_04_gallerie/bonus/bonus_organ_gallery_overview_screen.dart';
 import 'package:advanced_mobile_app_development/03_einfuehrung_flutter_2/uebung_04_gallerie/organ_gallery_overview_screen.dart';
 import 'package:advanced_mobile_app_development/04_interaction_async/praxis_callback/callback_test_screen.dart';
+import 'package:advanced_mobile_app_development/04_interaction_async/praxis_form/form_screen.dart';
 import 'package:advanced_mobile_app_development/04_interaction_async/praxis_webrequest/random_fact_screen.dart';
 import 'package:advanced_mobile_app_development/04_interaction_async/theorie_async/future_screen.dart';
 import 'package:advanced_mobile_app_development/04_interaction_async/theorie_declarative/text_mapping_screen.dart';
 import 'package:advanced_mobile_app_development/04_interaction_async/theorie_input/checkbox_screen.dart';
-import 'package:advanced_mobile_app_development/04_interaction_async/praxis_form/form_screen.dart';
 import 'package:advanced_mobile_app_development/04_interaction_async/theorie_input/dropdown_screen.dart';
 import 'package:advanced_mobile_app_development/04_interaction_async/theorie_input/radio_button_screen.dart';
 import 'package:advanced_mobile_app_development/04_interaction_async/theorie_input/text_field_screen.dart';
 import 'package:advanced_mobile_app_development/04_interaction_async/uebung_05_tolldo/todo_list_screen.dart';
 import 'package:advanced_mobile_app_development/04_interaction_async/uebung_06_shows/show_search_screen.dart';
+import 'package:advanced_mobile_app_development/05_sensorik_gps/theorie_gps/gps_test_screen.dart';
+import 'package:advanced_mobile_app_development/05_sensorik_gps/theorie_sensorik/acceleration_test_screen.dart';
+import 'package:advanced_mobile_app_development/05_sensorik_gps/uebung_07_force/punch_calculator_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -81,6 +84,11 @@ class MyApp extends StatelessWidget {
   final todoListScreen = const TodoListScreen();
   final showSearchScreen = const ShowSearchScreen();
 
+  // 05: Sensorik und GPS
+  final accelerationTestScreen = const AccelerationTestScreen();
+  final punchCalculatorScreen = const PunchCalculatorScreen();
+  final gpsTestScreen = const GPSTestScreen();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -89,7 +97,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         appBarTheme: const AppBarTheme(backgroundColor: Colors.blue),
       ),
-      home: showSearchScreen,
+      home: gpsTestScreen,
     );
   }
 }
