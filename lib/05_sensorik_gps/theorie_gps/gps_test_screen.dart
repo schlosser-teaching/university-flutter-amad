@@ -18,7 +18,7 @@ class _GPSTestScreenState extends State<GPSTestScreen> {
   }
 
   Future<void> _getCurrentLocation() async {
-    var serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    final serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
       setState(() => _text = "Standortdienst ist deaktiviert.");
       return;

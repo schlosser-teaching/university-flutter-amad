@@ -28,6 +28,7 @@ import 'package:advanced_mobile_app_development/04_interaction_async/uebung_06_s
 import 'package:advanced_mobile_app_development/05_sensorik_gps/theorie_gps/gps_test_screen.dart';
 import 'package:advanced_mobile_app_development/05_sensorik_gps/theorie_sensorik/acceleration_test_screen.dart';
 import 'package:advanced_mobile_app_development/05_sensorik_gps/uebung_07_force/punch_calculator_screen.dart';
+import 'package:advanced_mobile_app_development/05_sensorik_gps/uebung_08_gps/gps_map_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -86,8 +87,9 @@ class MyApp extends StatelessWidget {
 
   // 05: Sensorik und GPS
   final accelerationTestScreen = const AccelerationTestScreen();
-  final punchCalculatorScreen = const PunchCalculatorScreen();
   final gpsTestScreen = const GPSTestScreen();
+  final punchCalculatorScreen = const PunchCalculatorScreen();
+  final gpsMapScreen = const GPSMapScreen();
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +99,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         appBarTheme: const AppBarTheme(backgroundColor: Colors.blue),
       ),
-      home: gpsTestScreen,
+      home: gpsMapScreen,
     );
   }
 }
