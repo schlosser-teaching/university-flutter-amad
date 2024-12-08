@@ -38,6 +38,15 @@ dependencies:
   geolocator: ^8.0.0
   flutter_map: ^7.0.2
   latlong2: ^0.9.1
+#  tflite: 1.1.2
+#  tflite:
+#    git:
+#      url: git@github.com:tech-ramakant/flutter_tflite.git
+  tflite_flutter: ^0.11.0
+  tflite_flutter_helper_plus: ^0.0.2
+  image_picker: ^1.1.2
+  flutter_vision: ^1.1.4
+  camera: ^0.10.6
 
 dev_dependencies:
   flutter_test:

@@ -29,6 +29,8 @@ import 'package:advanced_mobile_app_development/05_sensorik_gps/theorie_gps/gps_
 import 'package:advanced_mobile_app_development/05_sensorik_gps/theorie_sensorik/acceleration_test_screen.dart';
 import 'package:advanced_mobile_app_development/05_sensorik_gps/uebung_07_force/punch_calculator_screen.dart';
 import 'package:advanced_mobile_app_development/05_sensorik_gps/uebung_08_gps/gps_map_screen.dart';
+import 'package:advanced_mobile_app_development/06_machine_learning/praxis_cat_dog/cat_dog_classifier_screen.dart';
+import 'package:advanced_mobile_app_development/06_machine_learning/praxis_yolo/yolo_camera_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -91,6 +93,10 @@ class MyApp extends StatelessWidget {
   final punchCalculatorScreen = const PunchCalculatorScreen();
   final gpsMapScreen = const GPSMapScreen();
 
+  // 06: Machine Learning
+  final catDogClassifierScreen = const CatDogClassifierScreen();
+  final yoloCameraScreen = const YoloCameraScreen();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -99,7 +105,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         appBarTheme: const AppBarTheme(backgroundColor: Colors.blue),
       ),
-      home: gpsMapScreen,
+      home: catDogClassifierScreen,
     );
   }
 }
