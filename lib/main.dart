@@ -33,6 +33,7 @@ import 'package:advanced_mobile_app_development/06_machine_learning/praxis_cat_d
 import 'package:advanced_mobile_app_development/06_machine_learning/praxis_yolo/yolo_camera_screen.dart';
 import 'package:advanced_mobile_app_development/07_notifications/praxis_local_notifications/local_notification_screen.dart';
 import 'package:advanced_mobile_app_development/07_notifications/praxis_push_notifications/push_notification_screen.dart';
+import 'package:advanced_mobile_app_development/07_notifications/uebung_10_reminder/reminder_notification_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -102,6 +103,7 @@ class MyApp extends StatelessWidget {
   // 07: Notifications
   final localNotificationScreen = const LocalNotificationScreen();
   final pushNotificationScreen = const PushNotificationScreen();
+  final reminderNotificationScreen = const ReminderNotificationScreen();
 
   @override
   Widget build(BuildContext context) {
@@ -111,7 +113,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         appBarTheme: const AppBarTheme(backgroundColor: Colors.blue),
       ),
-      home: pushNotificationScreen,
+      home: reminderNotificationScreen,
     );
   }
 }
