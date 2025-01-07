@@ -31,6 +31,8 @@ import 'package:advanced_mobile_app_development/05_sensorik_gps/uebung_07_force/
 import 'package:advanced_mobile_app_development/05_sensorik_gps/uebung_08_gps/gps_map_screen.dart';
 import 'package:advanced_mobile_app_development/06_machine_learning/praxis_cat_dog/cat_dog_classifier_screen.dart';
 import 'package:advanced_mobile_app_development/06_machine_learning/praxis_yolo/yolo_camera_screen.dart';
+import 'package:advanced_mobile_app_development/07_notifications/praxis_local_notifications/local_notification_screen.dart';
+import 'package:advanced_mobile_app_development/07_notifications/praxis_push_notifications/push_notification_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -97,6 +99,10 @@ class MyApp extends StatelessWidget {
   final catDogClassifierScreen = const CatDogClassifierScreen();
   final yoloCameraScreen = const YoloCameraScreen();
 
+  // 07: Notifications
+  final localNotificationScreen = const LocalNotificationScreen();
+  final pushNotificationScreen = const PushNotificationScreen();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -105,7 +111,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         appBarTheme: const AppBarTheme(backgroundColor: Colors.blue),
       ),
-      home: catDogClassifierScreen,
+      home: pushNotificationScreen,
     );
   }
 }
