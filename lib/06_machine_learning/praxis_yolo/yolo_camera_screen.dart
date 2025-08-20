@@ -1,8 +1,6 @@
-import 'dart:typed_data';
-
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_vision/flutter_vision.dart';
+import 'package:flutter_vision/flutter_vision.dart';
 
 class YoloCameraScreen extends StatefulWidget {
   const YoloCameraScreen({super.key});
@@ -12,7 +10,7 @@ class YoloCameraScreen extends StatefulWidget {
 }
 
 class _YoloCameraScreenState extends State<YoloCameraScreen> {
-  // final FlutterVision _flutterVision = FlutterVision();
+  final FlutterVision _flutterVision = FlutterVision();
   CameraController? _cameraController;
   CameraImage? _cameraImage;
   List<Map<String, dynamic>> _yoloResults = [];
@@ -34,28 +32,28 @@ class _YoloCameraScreenState extends State<YoloCameraScreen> {
   }
 
   Future<void> _loadYoloModel() async {
-    // await _flutterVision.loadYoloModel(
-    //     labels: 'assets/yolo-labels.txt',
-    //     modelPath: 'assets/yolo-model.tflite',
-    //     modelVersion: 'yolov8',
-    //     numThreads: 2,
-    //     useGpu: true);
+    await _flutterVision.loadYoloModel(
+        labels: 'assets/yolo-labels.txt',
+        modelPath: 'assets/yolo-model.tflite',
+        modelVersion: 'yolov8',
+        numThreads: 2,
+        useGpu: true);
   }
 
   Future<void> _processCameraImage(CameraImage cameraImage) async {
     _cameraImage = cameraImage;
-    // final results = await _flutterVision.yoloOnFrame(
-    //   bytesList: cameraImage.planes.map((plane) => plane.bytes).toList(),
-    //   imageHeight: cameraImage.height,
-    //   imageWidth: cameraImage.width,
-    //   iouThreshold: 0.4,
-    //   confThreshold: 0.4,
-    //   classThreshold: 0.5,
-    // );
+    final results = await _flutterVision.yoloOnFrame(
+      bytesList: cameraImage.planes.map((plane) => plane.bytes).toList(),
+      imageHeight: cameraImage.height,
+      imageWidth: cameraImage.width,
+      iouThreshold: 0.4,
+      confThreshold: 0.4,
+      classThreshold: 0.5,
+    );
 
-    // if (results.isNotEmpty) {
-    //   setState(() => _yoloResults = results);
-    // }
+    if (results.isNotEmpty) {
+      setState(() => _yoloResults = results);
+    }
   }
 
   @override

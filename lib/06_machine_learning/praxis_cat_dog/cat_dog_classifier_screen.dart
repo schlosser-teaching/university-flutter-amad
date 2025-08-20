@@ -2,7 +2,8 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-// import 'package:tflite_flutter/tflite_flutter.dart';
+import 'package:tflite_flutter/tflite_flutter.dart';
+import 'package:image/image.dart' as img;
 
 class CatDogClassifierScreen extends StatefulWidget {
   const CatDogClassifierScreen({super.key});
@@ -14,7 +15,7 @@ class CatDogClassifierScreen extends StatefulWidget {
 class _CatDogClassifierScreenState extends State<CatDogClassifierScreen> {
   static const labels = ['Katze', 'Hund'];
 
-  // late Interpreter _interpreter;
+  late Interpreter _interpreter;
   File? _currentImage;
   String? prediction;
   List<double>? outputScores;
@@ -26,12 +27,12 @@ class _CatDogClassifierScreenState extends State<CatDogClassifierScreen> {
   }
 
   Future<void> loadModel() async {
-    // _interpreter = await Interpreter.fromAsset('assets/cat-dog-model-new.tflite');
+    _interpreter = await Interpreter.fromAsset('assets/cat-dog-model-new.tflite');
   }
 
   @override
   void dispose() {
-    // _interpreter.close();
+    _interpreter.close();
     super.dispose();
   }
 
@@ -42,37 +43,52 @@ class _CatDogClassifierScreenState extends State<CatDogClassifierScreen> {
 
     setState(() => _currentImage = File(file.path));
 
-    final inputImage = await _processImage(File(file.path));
+    final inputTensor = _interpreter.getInputTensor(0);
+    final outputTensor = _interpreter.getOutputTensor(0);
 
-    // final inputShape = _interpreter.getInputTensor(0).shape;
-    // final outputShape = _interpreter.getOutputTensor(0).shape;
-    //
-    // final inputBuffer = Float32List(inputShape[1] * inputShape[2] * inputShape[3]);
-    // inputBuffer.setAll(0, inputImage);
-    //
-    // final outputBuffer = List.filled(outputShape[1], 0.0);
-    //
-    // _interpreter.run(inputBuffer, outputBuffer);
-    //
-    // outputScores = outputBuffer;
-    // final maxScoreIndex = outputScores!
-    //     .indexWhere((score) => score == outputScores!.reduce((a, b) => a > b ? a : b));
-    // final classifiedLabel = labels[maxScoreIndex];
-    //
-    // setState(() => prediction = classifiedLabel);
+    final h = inputTensor.shape[1];
+    final w = inputTensor.shape[2];
+    final c = inputTensor.shape[3];
+
+    final input = await _processImage(File(file.path), height: h, width: w, channels: c);
+
+    final output = [List.filled(outputTensor.shape[1], 0.0)];
+    _interpreter.run(input, output);
+
+    outputScores = output.first.cast<double>();
+    final maxIdx = outputScores!
+        .indexWhere((s) => s == outputScores!.reduce((a, b) => a > b ? a : b));
+    final classifiedLabel = labels[maxIdx];
+
+    setState(() => prediction = classifiedLabel);
   }
 
-  Future<List<double>> _processImage(File image) async {
-    final imageBytes = await image.readAsBytes();
-    final imageTensor = await _imageToTensor(imageBytes);
 
-    return imageTensor;
-  }
+  Future<List<List<List<List<double>>>>> _processImage(
+      File image, {
+        required int height,
+        required int width,
+        required int channels,
+      }) async {
+    final bytes = await image.readAsBytes();
+    final decoded = img.decodeImage(bytes)!;
+    final resized = img.copyResize(decoded, width: width, height: height);
 
-  Future<List<double>> _imageToTensor(Uint8List imageBytes) async {
-    final tensor = List<double>.filled(299 * 299 * 3, 0.0);
-    // (This is a simplified version — you may want to resize and normalize using an image processing package)
-    return tensor;
+    return [
+      List.generate(
+        height,
+            (y) => List.generate(
+          width,
+              (x) {
+            final p = resized.getPixel(x, y);
+            final r = p.r / 255.0;
+            final g = p.g / 255.0;
+            final b = p.b / 255.0;
+            return channels == 3 ? <double>[r, g, b] : <double>[r];
+          },
+        ),
+      ),
+    ];
   }
 
   @override
