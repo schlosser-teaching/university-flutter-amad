@@ -78,8 +78,6 @@ class _ReminderNotificationScreenState extends State<ReminderNotificationScreen>
       body,
       TZDateTime.from(selectedDateTime!, local),
       details,
-      uiLocalNotificationDateInterpretation:
-      UILocalNotificationDateInterpretation.absoluteTime,
       androidScheduleMode: AndroidScheduleMode.exact,
     );
   }

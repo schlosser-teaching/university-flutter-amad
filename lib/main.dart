@@ -113,7 +113,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         appBarTheme: const AppBarTheme(backgroundColor: Colors.blue),
       ),
-      home: reminderNotificationScreen,
+      home: catDogClassifierScreen,
     );
   }
 }
